@@ -1,4 +1,4 @@
-from account.models import UserProfile
+from .models import UserProfile
 
 
 def user_additional_models(request):

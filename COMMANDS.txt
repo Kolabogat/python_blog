@@ -9,5 +9,5 @@ python manage.py migrate
 python manage.py runserver
 python manage.py createsuperuser
 admin
-
-
+python -m pip install Pillow
+python manage.py collectstatic
