@@ -1,0 +1,7 @@
+pip install django
+pip install djangorestframework
+django-admin startproject backend
+cd backend
+python manage.py startapp account
+python manage.py startapp blog
+
