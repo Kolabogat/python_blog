@@ -17,8 +17,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from account.views import RegisterView
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('account/', include('account.urls')),
     path('api/blog/', include('blog.urls')),
+    path('api/account/', include('rest_framework.urls')),
+    path('api/account/register/', RegisterView.as_view()),
 ]
