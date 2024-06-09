@@ -18,3 +18,4 @@ npx create-react-app frontend
 cd frontend
 npm start
 npm install react-router-dom
+npx json-server --watch data/db.json --port 8000
