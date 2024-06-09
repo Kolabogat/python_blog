@@ -3,7 +3,7 @@ from blog.views import *
 
 
 urlpatterns = [
-    path('article/', ArticleAPIList.as_view()),
-    path('article/<int:pk>/', ArticleAPIUpdate.as_view()),
-    path('article_delete/<int:pk>/', ArticleAPIDestroy.as_view()),
+    path('blogs/', ArticleAPIList.as_view()),
+    path('blog/<int:pk>/', ArticleAPIUpdate.as_view()),
+    path('blog_delete/<int:pk>/', ArticleAPIDestroy.as_view()),
 ]
