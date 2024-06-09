@@ -12,3 +12,9 @@ admin
 python -m pip install Pillow
 python manage.py collectstatic
 pip install djangorestframework-simplejwt
+
+
+npx create-react-app frontend
+cd frontend
+npm start
+npm install react-router-dom
