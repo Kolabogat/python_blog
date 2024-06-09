@@ -1,0 +1,69 @@
+{
+  "blogs": [
+    {
+      "id": 1,
+      "user": "Admin",
+      "title": "My First Blog",
+      "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "theme": "Python",
+      "words_number": 1234,
+      "difficulty": "Easy",
+      "is_published": true
+    },
+    {
+      "id": 2,
+      "user": "Admin",
+      "title": "My Second Blog",
+      "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "theme": "Python",
+      "words_number": 1834,
+      "difficulty": "Easy",
+      "is_published": true
+    },
+    {
+      "id": 3,
+      "user": "Admin",
+      "title": "My Second Blog",
+      "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "theme": "Python",
+      "words_number": 1834,
+      "difficulty": "Easy",
+      "is_published": true
+    },
+    {
+      "id": 4,
+      "user": "Admin",
+      "title": "My Second Blog",
+      "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "theme": "Python",
+      "words_number": 1834,
+      "difficulty": "Easy",
+      "is_published": true
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "category": "All"
+    },
+    {
+      "id": 2,
+      "category": "My"
+    },
+    {
+      "id": 3,
+      "category": "Python"
+    },
+    {
+      "id": 4,
+      "category": "Databases"
+    }
+  ],
+  "difficulties": [
+    {
+      "id": 1,
+      "difficulty": "Easy",
+      "color": "#2sadf12"
+    }
+  ]
+}
