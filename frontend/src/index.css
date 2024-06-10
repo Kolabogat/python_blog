@@ -141,7 +141,6 @@ h2 {
   margin: 20px;
 }
 .blog-details span {
-
 }
 .blog-details p {
     margin: 10px auto;
@@ -153,6 +152,13 @@ h2 {
   padding: 8px;
   border-radius: 12px;
   cursor: pointer;
+}
+.blog-details img {
+  margin-top: 10px;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
 }
 
 /* Create New Blog */
