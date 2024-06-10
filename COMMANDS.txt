@@ -12,6 +12,8 @@ admin
 python -m pip install Pillow
 python manage.py collectstatic
 pip install djangorestframework-simplejwt
+pip install django-cors-headers
+
 
 
 npx create-react-app frontend
