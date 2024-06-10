@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 const BlogDetail = () => {
   const { id } = useParams();
-  const { data: blog, error } = useFetch('http://localhost:8000/api/blog/1/');
+  const { data: blog, error } = useFetch('http://localhost:8000/api/blog/' + id + '/');
   const navigate = useNavigate();
 
   return (
@@ -15,6 +15,8 @@ const BlogDetail = () => {
         <div>
           <h1>{ blog.title }</h1>
           <span className='span-category'>{ blog.category.category }</span> · <span className='difficulty-easy'>{ blog.difficulty.difficulty }</span><span> · Written by { blog.user } · { blog.words_number } Words</span>
+          { blog.image && <img className='image-field' src={ blog.image } alt="Paris" /> }
+
           <p>{ blog.content }</p>
         </div>
       )}
