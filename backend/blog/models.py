@@ -8,11 +8,12 @@ from django.db.models import (
     BooleanField,
     TextField,
     ManyToManyField,
-    AutoField,
+    ImageField,
 )
 from django.urls import reverse
 from django.contrib.auth.models import User
 
+from backend.utils import get_blog_image_path, get_admin_id
 
 DIFFICULTIES = [
     ('easy', 'Easy'),
@@ -51,8 +52,9 @@ class Article(Model):
         verbose_name_plural = 'Articles'
         ordering = ['id']
 
-    # user = ForeignKey(User, verbose_name='User', on_delete=PROTECT, related_name='user_article')
+    user = ForeignKey(User, verbose_name='User', on_delete=PROTECT, related_name='user_article', default=get_admin_id())
     title = CharField(max_length=75, verbose_name='Title', unique=True)
+    image = ImageField(upload_to=get_blog_image_path, verbose_name='Image', blank=True)
     content = TextField(verbose_name='Content')
     category = ForeignKey(Categories, verbose_name='Theme', on_delete=PROTECT, related_name='article_category')
     words_number = IntegerField(verbose_name='Number of Words', default=0)

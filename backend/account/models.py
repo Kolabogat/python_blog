@@ -1,6 +1,3 @@
-import os
-import uuid
-
 from django.db.models import (
     Model,
     ForeignKey,
@@ -12,6 +9,7 @@ from django.db.models import (
 )
 from django.contrib.auth.models import User
 
+from backend.utils import get_account_image_path, get_default_account_image_path
 
 GENDERS = [
     ('unknown', 'Unknown'),
@@ -20,31 +18,13 @@ GENDERS = [
 ]
 
 
-def get_file_path(instance, filename, directory):
-    ext = filename.split('.')[-1]
-    filename = "%s.%s" % (uuid.uuid4(), ext)
-    return os.path.join(f'account/{instance.user}/{directory}/', filename)
-
-
-def get_image_path(instance, filename):
-    return get_file_path(
-        instance=instance,
-        filename=filename,
-        directory="image"
-    )
-
-
-def get_default_image_path():
-    return os.path.join(f'default/image/default.jpg')
-
-
 class UserProfile(Model):
     class Meta:
         verbose_name = 'User Profile'
         ordering = ['user']
 
     user = ForeignKey(User, verbose_name='User', on_delete=PROTECT, related_name='user_profile')
-    image = ImageField(upload_to=get_image_path, verbose_name='Image', default=get_default_image_path())
+    image = ImageField(upload_to=get_account_image_path, verbose_name='Image', default=get_default_account_image_path())
     name = CharField(max_length=50, verbose_name='Name', blank=True)
     gender = CharField(max_length=50, verbose_name='Gender', choices=GENDERS, default='unknown')
     date_of_birth = DateTimeField(verbose_name='Date of Birth', blank=True, null=True)
