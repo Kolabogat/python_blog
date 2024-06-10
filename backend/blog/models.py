@@ -8,6 +8,7 @@ from django.db.models import (
     BooleanField,
     TextField,
     ManyToManyField,
+    AutoField,
 )
 from django.urls import reverse
 from django.contrib.auth.models import User
@@ -30,18 +31,32 @@ THEMES = [
 ]
 
 
+class Categories(Model):
+    category = CharField(max_length=50, verbose_name='Theme')
+
+    def __str__(self):
+        return str(self.category)
+
+
+class Difficulties(Model):
+    difficulty = CharField(max_length=50, verbose_name='Difficulty')
+
+    def __str__(self):
+        return str(self.difficulty)
+
+
 class Article(Model):
     class Meta:
         verbose_name = 'Article'
         verbose_name_plural = 'Articles'
         ordering = ['id']
 
-    user = ForeignKey(User, verbose_name='User', on_delete=PROTECT, related_name='user_article')
+    # user = ForeignKey(User, verbose_name='User', on_delete=PROTECT, related_name='user_article')
     title = CharField(max_length=75, verbose_name='Title', unique=True)
     content = TextField(verbose_name='Content')
-    theme = CharField(max_length=50, choices=THEMES, verbose_name='Theme', default='python')
+    category = ForeignKey(Categories, verbose_name='Theme', on_delete=PROTECT, related_name='article_category')
     words_number = IntegerField(verbose_name='Number of Words', default=0)
-    difficulty = CharField(max_length=50, choices=DIFFICULTIES, verbose_name='Difficulty', default='average')
+    difficulty = ForeignKey(Difficulties, verbose_name='Difficulty', on_delete=PROTECT, related_name='article_difficulty')
     created_at = DateTimeField(auto_now_add=True, verbose_name='Created at')
     modified_at = DateTimeField(auto_now=True, verbose_name='Modified at')
     is_published = BooleanField(verbose_name='Published', default=True)
