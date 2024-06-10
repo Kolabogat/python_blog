@@ -21,7 +21,7 @@ from account.views import RegisterView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/blog/', include('blog.urls')),
+    path('api/', include('blog.urls')),
     path('api/account/', include('rest_framework.urls')),
     path('api/account/register/', RegisterView.as_view()),
 ]
