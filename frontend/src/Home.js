@@ -3,14 +3,16 @@ import Sidebar from './Sidebar';
 import useFetch from './useFetch';
 
 const Home = () => {
-  const { data: blogs, error } = useFetch('http://localhost:8000/blogs')
-  const { data: categories, cat_error } = useFetch('http://localhost:8000/categories')
+  const { data: blogs, error } = useFetch('http://localhost:8000/api/blog_list/')
+  const { data: categories, cat_error } = useFetch('http://localhost:8000/api/categories/')
 
   return (
     <div className="Home">
       <div className='container'>
-        { blogs && <BlogList blogs={blogs} title='All Blogs' /> }
-        { categories && <Sidebar categories={categories} title='Categories' /> }
+        { blogs && <BlogList blogs={ blogs.results } title='All Blogs' /> }
+        { error }
+        { cat_error }
+        { categories && <Sidebar categories={ categories.results } title='Categories' /> }
       </div>
     </div>
   );

@@ -2,7 +2,8 @@ import './App.css';
 import { BrowserRouter as Router , Route, Routes } from 'react-router-dom';
 import Navbar from './Navbar';
 import Home from './Home';
-import Sidebar from './Sidebar';
+import BlogDetail from './BlogDetail';
+import Create from './Create';
 
 
 function App() {
@@ -12,6 +13,8 @@ function App() {
         <Navbar />
           <Routes>
             <Route exact path='/' element={ <Home /> } />
+            <Route exact path='/blog/:id' element={ <BlogDetail /> } />
+            <Route exact path='/add_blog' element={ <Create /> } />
           </Routes>
       </div>
     </Router>
