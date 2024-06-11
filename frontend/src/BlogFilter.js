@@ -12,7 +12,7 @@ const BlogFilter = () => {
   return (
     <div className="Home">
       <div className='container'>
-        { blogs && <BlogList blogs={ blogs } title={ `${ slug } blogs` } /> }
+        { blogs && <BlogList blogs={ blogs } title={ `${ slug } blogs` } url={ `/filter_by/${ slug }` } /> }
         { error }
         { cat_error }
         { categories && <Sidebar categories={ categories.results } title='Categories' /> }

@@ -9,7 +9,7 @@ const Home = () => {
   return (
     <div className="Home">
       <div className='container'>
-        { blogs && <BlogList blogs={ blogs } title='All Blogs' /> }
+        { blogs && <BlogList blogs={ blogs } title='All Blogs' url='' /> }
         { error }
         { cat_error }
         { categories && <Sidebar categories={ categories.results } title='Categories' /> }
