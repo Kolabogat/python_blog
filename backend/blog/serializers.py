@@ -7,13 +7,13 @@ from blog.models import Article, Categories, Difficulties
 class CategoriesSerializer(serializers.ModelSerializer):
     class Meta:
         model = Categories
-        fields = ('id', 'category',)
+        fields = ('id', 'category', 'slug')
 
 
 class DifficultiesSerializer(serializers.ModelSerializer):
     class Meta:
         model = Difficulties
-        fields = ('id', 'difficulty')
+        fields = ('id', 'difficulty', 'class_name')
 
 
 class ArticleSerializer(serializers.ModelSerializer):
@@ -39,6 +39,7 @@ class ArticleSerializer(serializers.ModelSerializer):
             'category_id',
             'difficulty',
             'difficulty_id',
+            'created_at',
         )
 
 
