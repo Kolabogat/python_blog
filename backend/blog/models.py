@@ -9,6 +9,7 @@ from django.db.models import (
     TextField,
     ManyToManyField,
     ImageField,
+    SlugField,
 )
 from django.urls import reverse
 from django.contrib.auth.models import User
@@ -22,18 +23,10 @@ DIFFICULTIES = [
     ('very_hard', 'Very Hard'),
 ]
 
-THEMES = [
-    ('python', 'Python'),
-    ('libraries', 'Libraries'),
-    ('databases', 'Databases'),
-    ('deploy', 'Deploy'),
-    ('theory', 'Theory'),
-    ('algorithms', 'Algorithms'),
-]
-
 
 class Categories(Model):
-    category = CharField(max_length=50, verbose_name='Theme')
+    category = CharField(max_length=50, verbose_name='Theme', unique=True)
+    slug = SlugField(max_length=50, verbose_name='Url', unique=True)
 
     def __str__(self):
         return str(self.category)
@@ -41,6 +34,7 @@ class Categories(Model):
 
 class Difficulties(Model):
     difficulty = CharField(max_length=50, verbose_name='Difficulty')
+    class_name = CharField(max_length=25, verbose_name='Class')
 
     def __str__(self):
         return str(self.difficulty)
