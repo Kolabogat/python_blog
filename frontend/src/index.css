@@ -273,3 +273,18 @@ input::file-selector-button {
   margin: 19px -1;
   border: 2px solid #3776ab;
 }
+
+
+
+/* Footer */
+.footer {
+  padding: 20px;
+  max-width: 1000px;
+  margin: 30px auto;
+  border-top: 1px solid #f2f2f2;
+}
+.footer span {
+  color: #909090;
+  margin: auto;
+  padding-top: 20px;
+}

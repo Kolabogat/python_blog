@@ -5,6 +5,7 @@ import Home from './Home';
 import BlogDetail from './BlogDetail';
 import Create from './Create';
 import BlogFilter from './BlogFilter';
+import Footer from './Footer';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
             <Route exact path='/blog/:id' element={ <BlogDetail /> } />
             <Route exact path='/add_blog' element={ <Create /> } />
           </Routes>
+        <Footer />
       </div>
     </Router>
   );
