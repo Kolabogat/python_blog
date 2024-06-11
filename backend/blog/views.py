@@ -1,6 +1,7 @@
 from rest_framework.pagination import PageNumberPagination
 from rest_framework import generics
 from rest_framework import permissions
+from rest_framework.parsers import FileUploadParser, MultiPartParser, FormParser
 
 from blog.models import Article, Categories, Difficulties
 from blog.permissions import IsOwnerOrReadOnly
@@ -31,7 +32,6 @@ class ArticleAPICreate(generics.CreateAPIView):
 
 
 
-
 class ArticleAPIUpdate(generics.RetrieveUpdateAPIView):
     queryset = Article.objects.all()
     serializer_class = ArticleSerializer
@@ -51,7 +51,8 @@ class ArticleAPIFilter(generics.ListAPIView):
     # permission_classes = (IsOwnerOrReadOnly, )
 
     def get_queryset(self, *args, **kwargs):
-        category = self.kwargs.get('category')
+        filter_word = self.kwargs.get('filter')
+        category = Categories.objects.get(slug=filter_word)
         return Article.objects.filter(category=category)
 
 
