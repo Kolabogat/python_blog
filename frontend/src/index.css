@@ -54,6 +54,31 @@ h2 {
   white-space: nowrap;
   text-overflow: ellipsis;
 }
+.datetime {
+  color: #909090;
+  font-weight: bold;
+}
+.italic {
+  font-style: italic;
+}
+.browse-additional {
+  width: 100%;
+  font-size: 16px;
+  margin: 4px 0;
+}
+input::file-selector-button {
+  color: #333;
+  border-radius: 12px;
+  width: 50%;
+  padding: 12px 20px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+.capitalize {
+  text-transform: capitalize;
+  padding-left: 16px;
+}
+
 
 /* Navbar */
 .navbar {
@@ -106,6 +131,12 @@ h2 {
   background: rgb(55,118,171);
   background: linear-gradient(90deg, rgba(55,118,171,0.2) 0%, rgba(255,211,67,0.2) 100%);
 }
+.blog-preview:active {
+  padding: 9px 15px;
+  margin: 19px -1;
+  border: 2px solid #3776ab;
+}
+
 .blog-info {
   text-align: left;
 }
@@ -115,15 +146,17 @@ h2 {
 .blog-preview span{
   text-align: left;
   margin-top: 4px;
-
 }
-
 .difficulty-easy {
   color: #48ab37;
   text-align: left;
   font-weight: bold;
 }
-
+.difficulty-hard {
+  color: #ab3737;
+  text-align: left;
+  font-weight: bold;
+}
 
 /* Blog Details */
 .blog-details {
@@ -135,15 +168,16 @@ h2 {
 .blog-details h1 {
   font-size: 30px;
   color: #3776ab;
+  margin-top: 25px;
   margin-bottom: 10px;
 }
 .blog-details div {
-  margin: 20px;
-}
-.blog-details span {
+  padding: 10px 18px;
+  border: 1px solid #f2f2f2;
+  border-radius: 12px;
 }
 .blog-details p {
-    margin: 10px auto;
+  margin: 10px auto;
 }
 .blog-details button {
   background: #3776ab;
@@ -154,7 +188,7 @@ h2 {
   cursor: pointer;
 }
 .blog-details img {
-  margin-top: 10px;
+  margin-top: 4px;
   width: 100%;
   height: auto;
   border-radius: 12px;
@@ -173,13 +207,12 @@ h2 {
 .create h2 {
   text-align: center;
   margin: 20px;
-
 }
 .create label {
   padding: 6px 10px;
   margin: 10px auto;
 }
-.create input, .create textarea, .create select {
+.create input[type='text'], .create textarea, .create select {
   font-size: 16px;
   width: 100%;
   padding: 12px 20px;
@@ -189,6 +222,9 @@ h2 {
   border-radius: 12px;
   box-sizing: border-box;
   resize: vertical;
+}
+.create textarea {
+  height: 100px;
 }
 .create button {
   font-size: 16px;
@@ -214,10 +250,13 @@ h2 {
   padding: 6px;
 }
 .not-found a:hover {
-  color: #f1356d;
+  color: #ff0000;
 }
 
 /* Sidebar */
+.categories a {
+  text-decoration: none;
+}
 .category {
   padding: 10px 16px;
   margin: 20px 0;
