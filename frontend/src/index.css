@@ -56,7 +56,6 @@ h2 {
 }
 .datetime {
   color: #909090;
-  font-weight: bold;
 }
 .italic {
   font-style: italic;
@@ -288,3 +287,25 @@ input::file-selector-button {
   margin: auto;
   padding-top: 20px;
 }
+
+/* Paginator */
+.pagination {
+  display: inline-block;
+  margin-top: 30px;
+}
+.pagination a {
+  color: black;
+  float: left;
+  margin: -0.5px;
+  padding: 8px 16px;
+  text-decoration: none;
+  border-radius: 4px;
+  border: 1px solid #f2f2f2;
+}
+.pagination a.active {
+  color: #909090;
+}
+.pagination a:hover:not(.active) {
+  background-color: rgba(55,118,171,0.1);
+}
+

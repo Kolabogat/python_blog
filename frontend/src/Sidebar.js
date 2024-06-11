@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import useFetch from './useFetch';
 
-const Sidebar = ({categories, title}) => {
+const Sidebar = ({ categories, title }) => {
 
   return (
     <div className='sidebar'>
