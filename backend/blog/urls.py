@@ -9,6 +9,7 @@ urlpatterns = [
     path('blog_delete/<int:pk>/', ArticleAPIDestroy.as_view()),
     path('blog/filter=<str:filter>/', ArticleAPIFilter.as_view()),
 
+    path('difficulties/', DifficultiesAPIList.as_view()),
     path('categories/', CategoriesAPIList.as_view()),
     path('categories/<int:pk>/', CategoriesAPIRetrieve.as_view()),
 ]

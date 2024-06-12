@@ -6,13 +6,13 @@ from rest_framework.parsers import FileUploadParser, MultiPartParser, FormParser
 
 from blog.models import Article, Categories, Difficulties
 from blog.permissions import IsOwnerOrReadOnly
-from blog.serializers import ArticleSerializer, CategoriesSerializer, ArticleCreateSerializer
+from blog.serializers import ArticleSerializer, CategoriesSerializer, ArticleCreateSerializer, DifficultiesSerializer
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
 
 class ArticleAPIListPagination(PageNumberPagination):
-    page_size = 2
+    page_size = 5
     page_size_query_param = 'page_size'
     max_page_size = 20
 
@@ -96,7 +96,9 @@ class CategoriesAPIRetrieve(generics.RetrieveAPIView):
     serializer_class = CategoriesSerializer
 
 
-
+class DifficultiesAPIList(generics.ListAPIView):
+    queryset = Difficulties.objects.all()
+    serializer_class = DifficultiesSerializer
 
 
 @api_view(['GET'])
