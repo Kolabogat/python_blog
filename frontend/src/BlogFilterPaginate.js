@@ -15,7 +15,7 @@ const BlogFilterPaginate = () => {
         { blogs && <BlogList blogs={ blogs } title={ `${ slug } blogs` } url={ `/filter_by/${ slug }` } /> }
         { error }
         { cat_error }
-        { categories && <Sidebar categories={ categories.results } title='Categories' /> }
+        { categories && <Sidebar categories={ categories } title='Categories' /> }
       </div>
     </div>
   );

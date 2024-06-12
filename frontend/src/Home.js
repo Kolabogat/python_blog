@@ -12,7 +12,7 @@ const Home = () => {
         { blogs && <BlogList blogs={ blogs } title='All Blogs' url='' /> }
         { error }
         { cat_error }
-        { categories && <Sidebar categories={ categories.results } title='Categories' /> }
+        { categories && <Sidebar categories={ categories } title='Categories' /> }
       </div>
     </div>
   );

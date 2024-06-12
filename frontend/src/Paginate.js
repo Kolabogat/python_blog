@@ -26,7 +26,7 @@ const Paginate = ( blogs, url ) => {
   )}}
 
   const handlePaginator = ( blog_objects ) => {
-    if ( blog_objects.total_objects > 0) {
+    if ( blog_objects.total_pages > 1) {
       return (
         <div>
           { handlePreviousNext(blogs.previous_page_number, 'Previous', url) }

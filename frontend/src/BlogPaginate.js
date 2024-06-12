@@ -16,7 +16,7 @@ const BlogPaginate = () => {
         { blogs && <BlogList blogs={ blogs } title='All blogs' url='' /> }
         { error }
         { cat_error }
-        { categories && <Sidebar categories={ categories.results } title='Categories' /> }
+        { categories && <Sidebar categories={ categories } title='Categories' /> }
       </div>
     </div>
   );
