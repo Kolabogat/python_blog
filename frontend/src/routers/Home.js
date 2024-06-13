@@ -1,6 +1,6 @@
-import BlogList from './BlogList';
-import Sidebar from './Sidebar';
-import useFetch from './useFetch';
+import BlogList from '../BlogList';
+import Sidebar from '../inc/Sidebar';
+import useFetch from '../useFetch';
 
 const Home = () => {
   const { data: blogs, error } = useFetch('http://localhost:8000/api/blog_list/')

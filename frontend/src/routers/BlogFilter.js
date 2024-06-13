@@ -1,6 +1,6 @@
-import BlogList from './BlogList';
-import Sidebar from './Sidebar';
-import useFetch from './useFetch';
+import BlogList from '../BlogList';
+import Sidebar from '../inc/Sidebar';
+import useFetch from '../useFetch';
 import { useParams } from "react-router-dom";
 
 

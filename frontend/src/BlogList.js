@@ -1,8 +1,5 @@
 import { Link } from "react-router-dom";
-import Sidebar from './Sidebar';
-import useFetch from './useFetch';
 import Paginate from './Paginate';
-
 
 const BlogList = ({ blogs, title, url }) => {
 

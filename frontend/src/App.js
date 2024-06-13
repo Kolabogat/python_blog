@@ -1,15 +1,13 @@
 import './App.css';
 import { BrowserRouter as Router , Route, Routes } from 'react-router-dom';
-import Navbar from './Navbar';
-import Home from './Home';
+import Navbar from './inc/Navbar';
+import Home from './routers/Home';
 import BlogDetail from './BlogDetail';
-import BlogFilter from './BlogFilter';
-import Footer from './Footer';
-import BlogList from './BlogList';
-import BlogPaginate from './BlogPaginate';
+import BlogFilter from './routers/BlogFilter';
+import Footer from './inc/Footer';
+import BlogPaginate from './routers/BlogPaginate';
 import CreateRouter from './routers/CreateRouter';
-import BlogFilterPaginate from './BlogFilterPaginate';
-
+import BlogFilterPaginate from './routers/BlogFilterPaginate';
 
 function App() {
   return (

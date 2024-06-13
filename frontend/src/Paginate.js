@@ -1,7 +1,4 @@
 import { Link } from "react-router-dom";
-import Sidebar from './Sidebar';
-import useFetch from './useFetch';
-
 
 const Paginate = ( blogs, url ) => {
 

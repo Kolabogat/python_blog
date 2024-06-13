@@ -8,7 +8,7 @@ const CreateRouter = () => {
   return (
     <div className="Home">
       <div className='container'>
-        { categories && <Create categories={ categories } difficulties={ difficulties } /> }
+        { categories && difficulties && <Create categories={ categories } difficulties={ difficulties } /> }
       </div>
     </div>
   );

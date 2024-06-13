@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
-import useFetch from './useFetch';
 
 const Create = ({ categories, difficulties }) => {
   const [title, setTitle] = useState('');

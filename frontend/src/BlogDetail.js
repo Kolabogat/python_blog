@@ -1,19 +1,28 @@
 import { useParams } from "react-router-dom";
 import useFetch from "./useFetch";
-import Sidebar from "./Sidebar";
+import Sidebar from "./inc/Sidebar";
 import { useNavigate } from "react-router-dom";
 
 const BlogDetail = () => {
   const { id } = useParams();
-  const { data: blog, error } = useFetch('http://localhost:8000/api/blog/' + id + '/');
+  const { data: blog, blog_error } = useFetch('http://localhost:8000/api/blog/' + id + '/');
+  const { data: categories, categories_error } = useFetch('http://localhost:8000/api/categories/')
   const navigate = useNavigate();
-  const { data: categories, cat_error } = useFetch('http://localhost:8000/api/categories/')
 
   return (
     <div className='container'>
       <div className='content'>
         <div className='blog-details'>
-          { error && <div>Error: { error }</div>}
+          { blog_error && (
+            <div>
+              Blog error: { blog_error }
+            </div>
+          )}
+          { categories_error && (
+            <div>
+              Categories error: { categories_error }
+            </div>
+          )}
           { blog && (
             <div>
               <h1>{ blog.title }</h1>
