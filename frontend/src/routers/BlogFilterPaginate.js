@@ -13,8 +13,6 @@ const BlogFilterPaginate = () => {
     <div className="Home">
       <div className='container'>
         { blogs && <BlogList blogs={ blogs } title={ `${ slug } blogs` } url={ `/filter_by/${ slug }` } /> }
-        { error }
-        { cat_error }
         { categories && <Sidebar categories={ categories } title='Categories' /> }
       </div>
     </div>

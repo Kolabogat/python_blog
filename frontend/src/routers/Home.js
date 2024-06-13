@@ -10,8 +10,6 @@ const Home = () => {
     <div className="Home">
       <div className='container'>
         { blogs && <BlogList blogs={ blogs } title='All Blogs' url='' /> }
-        { error }
-        { cat_error }
         { categories && <Sidebar categories={ categories } title='Categories' /> }
       </div>
     </div>
