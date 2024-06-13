@@ -14,7 +14,7 @@ from django.db.models import (
 from django.urls import reverse
 from django.contrib.auth.models import User
 
-from backend.utils import get_blog_image_path, get_admin_id
+from backend.utils import get_blog_image_path
 
 DIFFICULTIES = [
     ('easy', 'Easy'),
@@ -44,9 +44,9 @@ class Article(Model):
     class Meta:
         verbose_name = 'Article'
         verbose_name_plural = 'Articles'
-        ordering = ['id']
+        ordering = ['-created_at']
 
-    user = ForeignKey(User, verbose_name='User', on_delete=PROTECT, related_name='user_article', default=get_admin_id())
+    # user = ForeignKey(User, verbose_name='User', on_delete=PROTECT, related_name='user_article')
     title = CharField(max_length=75, verbose_name='Title', unique=True)
     image = ImageField(upload_to=get_blog_image_path, verbose_name='Image', blank=True)
     content = TextField(verbose_name='Content')

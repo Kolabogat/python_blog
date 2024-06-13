@@ -27,7 +27,3 @@ def get_blog_image_path(instance, filename):
         filename=filename,
         directory="blog"
     )
-
-
-def get_admin_id():
-    return User.objects.get(username='admin').id

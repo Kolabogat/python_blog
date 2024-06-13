@@ -1,6 +1,5 @@
 from rest_framework import serializers
 
-from backend.utils import get_admin_id
 from blog.models import Article, Categories, Difficulties
 
 
