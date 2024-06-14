@@ -7,7 +7,7 @@ import { useParams } from "react-router-dom";
 const BlogFilter = () => {
   const { slug } = useParams();
   const { data: blogs, error } = useFetch('http://localhost:8000/api/blog/filter=' + slug + '/')
-  const { data: categories, cat_error } = useFetch('http://localhost:8000/api/categories/')
+  const { data: categories, cat_error } = useFetch('http://localhost:8000/api/blog/categories/')
 
   return (
     <div className="Home">
