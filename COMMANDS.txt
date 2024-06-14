@@ -13,6 +13,9 @@ python -m pip install Pillow
 python manage.py collectstatic
 pip install djangorestframework-simplejwt
 pip install django-cors-headers
+pip install psycopg2
+pip install gunicorn
+pip install python-dotenv
 
 
 
