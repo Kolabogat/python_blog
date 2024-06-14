@@ -1,13 +1,14 @@
-from django.urls import path, re_path
+from django.urls import path
 from blog.views import *
 
 
 urlpatterns = [
-    path('blog_list/', ArticleAPIList.as_view()),
-    path('blog_create/', ArticleAPICreate.as_view()),
-    path('blog/<int:pk>/', ArticleAPIUpdate.as_view()),
-    path('blog_delete/<int:pk>/', ArticleAPIDestroy.as_view()),
-    path('blog/filter=<str:filter>/', ArticleAPIFilter.as_view()),
+    path('', ArticleAPIList.as_view()),
+    path('create/', ArticleAPICreate.as_view()),
+    path('<int:pk>/', ArticleAPIDetail.as_view()),
+    path('update/<int:pk>/', ArticleAPIUpdate.as_view()),
+    path('delete/<int:pk>/', ArticleAPIDestroy.as_view()),
+    path('filter=<str:filter>/', ArticleAPIFilter.as_view()),
 
     path('difficulties/', DifficultiesAPIList.as_view()),
     path('categories/', CategoriesAPIList.as_view()),
