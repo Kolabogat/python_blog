@@ -17,7 +17,7 @@ const Create = ({ categories, difficulties }) => {
     e.preventDefault();
     const blog = { title, content, category, difficulty };
 
-    fetch('http://localhost:8000/api/blog_create/', {
+    fetch('http://localhost:8000/api/blog/create/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(blog)

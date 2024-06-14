@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 const BlogDetail = () => {
   const { id } = useParams();
   const { data: blog, blog_error } = useFetch('http://localhost:8000/api/blog/' + id + '/');
-  const { data: categories, categories_error } = useFetch('http://localhost:8000/api/categories/')
+  const { data: categories, categories_error } = useFetch('http://localhost:8000/api/blog/categories/')
   const navigate = useNavigate();
 
   return (
