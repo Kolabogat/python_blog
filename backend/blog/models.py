@@ -46,7 +46,7 @@ class Article(Model):
         verbose_name_plural = 'Articles'
         ordering = ['-created_at']
 
-    # user = ForeignKey(User, verbose_name='User', on_delete=PROTECT, related_name='user_article')
+    user = ForeignKey(User, verbose_name='User', on_delete=PROTECT, related_name='user_article')
     title = CharField(max_length=75, verbose_name='Title', unique=True)
     image = ImageField(upload_to=get_blog_image_path, verbose_name='Image', blank=True)
     content = TextField(verbose_name='Content')
